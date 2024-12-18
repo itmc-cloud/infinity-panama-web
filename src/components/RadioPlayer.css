@@ -1,0 +1,60 @@
+.radio-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.player {
+  background-color: #080747;
+  padding: 28px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.player img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info {
+  color: #E1E1E6;
+  padding-top: 28px;
+}
+
+.info p {
+  opacity: 0.68;
+  font-size: 19px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+.controls button {
+  background-color: #0055a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #003366;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.controls audio {
+  width: 100%;
+  max-width: 300px;
+}
