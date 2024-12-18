@@ -1,0 +1,180 @@
+/* Reset box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-background {
+  min-height: 100vh;
+  background: linear-gradient(270deg, #003366, #0055a5, #003366, #ff6600, #ffcc00, #ff0066, #6600ff);
+  background-size: 1400% 1400%;
+  animation: gradientBackgroundAnimation 20s ease infinite;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/diagmonds-light.png'), 
+              url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Example textures */
+  background-blend-mode: overlay;
+  opacity: 0.2; /* Adjust opacity for texture visibility */
+  pointer-events: none;
+}
+
+@keyframes gradientBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0; /* Single background color */
+}
+
+.radio-player {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff; /* Optional: to give it a background color */
+}
+
+.news {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff; /* Optional: to give it a background color */
+}
+
+.footer {
+  background-color: #000000; /* Black */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .radio-player,
+  .news {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 5px;
+  }
+
+  .radio-player {
+    padding: 5px;
+  }
+
+  .footer {
+    padding: 5px;
+  }
+
+  .whatsapp-button {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .whatsapp-button img {
+    width: 25px;
+    height: 25px;
+  }
+}
