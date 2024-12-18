@@ -1,0 +1,55 @@
+/* src/components/Navbar/Navbar.module.css */
+.appBar {
+  background-color: #000000; /* Black */
+  position: relative;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 16px;
+}
+
+.title {
+  flex-grow: 1;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+}
+
+.menuItem {
+  color: white !important;
+  text-transform: none;
+}
+
+.menuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background-color: #000000; /* Black */
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+  }
+
+  .menuOpen {
+    display: flex;
+  }
+
+  .menuButton {
+    display: block;
+  }
+}
