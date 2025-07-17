@@ -1,31 +1,55 @@
 /* src/components/Navbar/Navbar.module.css */
 .appBar {
-  background-color: #000000; /* Black */
+  background: linear-gradient(90deg, rgba(15, 15, 35, 0.95), rgba(26, 26, 46, 0.95)) !important;
   position: relative;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  min-height: 80px !important; /* Increased from default 64px */
+  z-index: 1000 !important; /* Ensure navbar is above everything */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
 }
 
 .logo {
-  height: 40px;
-  margin-right: 16px;
+  height: 70px; /* Increased from 64px */
+  width: auto;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .title {
   flex-grow: 1;
   color: white;
+  font-weight: bold !important;
 }
 
 .menu {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
 .menuItem {
   color: white !important;
   text-transform: none;
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
 }
 
 .menuItem:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(45deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+  color: #e0e7ff !important;
 }
 
 .menuButton {
@@ -37,16 +61,22 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 64px;
+    top: 80px;
     right: 0;
-    background-color: #000000; /* Black */
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
     width: 100%;
     text-align: right;
-    padding: 10px;
+    padding: 20px;
+    border-top: 2px solid #ff6600;
   }
 
   .menuOpen {
     display: flex;
+  }
+
+  .logo {
+    height: 48px;
   }
 
   .menuButton {

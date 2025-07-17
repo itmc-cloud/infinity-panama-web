@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import RadioPlayer from './components/RadioPlayer';
@@ -18,8 +17,8 @@ function App() {
         </div>
       </div>
       <Footer />
-      <a href="https://wa.me/1234567890" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
-        <img src="https://image.flaticon.com/icons/png/512/124/124034.png" alt="WhatsApp" />
+      <a href="https://wa.me/50765432109" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" />
       </a>
     </div>
   );
