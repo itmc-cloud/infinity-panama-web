@@ -1,9 +1,100 @@
 .footer {
-  background-color: #003366;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
   color: white;
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  padding: 16px;
-  text-align: center;
+  margin-top: auto;
+  border-top: 3px solid #ff6600;
+}
+
+.footer-title {
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-section-title {
+  position: relative;
+}
+
+.footer-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+}
+
+.contact-info {
+  opacity: 0.9;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-button {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 102, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.social-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 102, 0, 0.4);
+}
+
+.social-button.facebook:hover {
+  background: linear-gradient(45deg, #3b5998, #4267B2) !important;
+  border-color: #3b5998 !important;
+}
+
+.social-button.instagram:hover {
+  background: linear-gradient(45deg, #E4405F, #C13584, #833AB4) !important;
+  border-color: #E4405F !important;
+}
+
+.social-button.twitter:hover {
+  background: linear-gradient(45deg, #1DA1F2, #0d8bd9) !important;
+  border-color: #1DA1F2 !important;
+}
+
+.social-button.youtube:hover {
+  background: linear-gradient(45deg, #FF0000, #cc0000) !important;
+  border-color: #FF0000 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px 0;
+  }
+  
+  .social-links {
+    justify-content: center;
+    margin: 16px 0;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-button {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .social-links {
+    gap: 8px;
+  }
 }

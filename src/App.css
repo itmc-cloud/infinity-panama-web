@@ -7,29 +7,47 @@
   padding: 0;
 }
 
-html, body, #root {
-  height: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 .app-background {
   min-height: 100vh;
-  background: linear-gradient(270deg, #003366, #0055a5, #003366, #ff6600, #ffcc00, #ff0066, #6600ff);
-  background-size: 1400% 1400%;
-  animation: gradientBackgroundAnimation 20s ease infinite;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(101, 67, 33, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #2d1810, #3d2317, #4a2c1a, #5d3621);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .app-background::before {
@@ -39,31 +57,40 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/diagmonds-light.png'), 
-              url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Example textures */
-  background-blend-mode: overlay;
-  opacity: 0.2; /* Adjust opacity for texture visibility */
+  background: 
+    /* Wood grain texture simulation */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(139, 69, 19, 0.05) 1px,
+      rgba(139, 69, 19, 0.05) 2px,
+      transparent 3px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(101, 67, 33, 0.03) 0px,
+      rgba(101, 67, 33, 0.03) 1px,
+      transparent 2px,
+      transparent 8px
+    ),
+    /* Vintage paper texture */
+    radial-gradient(circle at 25% 25%, rgba(222, 184, 135, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(205, 133, 63, 0.02) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes gradientBackgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* Removed animated background effects and keyframes */
 
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .main-content {
@@ -71,73 +98,121 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 32px;
   width: 100%;
-  padding: 20px;
-  background-color: #f0f0f0; /* Single background color */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  min-height: auto;
+  flex-wrap: wrap;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: -1;
 }
 
 .radio-player {
   flex: 1;
+  max-width: 480px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff; /* Optional: to give it a background color */
+  align-items: flex-start;
 }
 
 .news {
   flex: 1;
-  padding: 20px;
-  background-color: #fff; /* Optional: to give it a background color */
-}
-
-.footer {
-  background-color: #000000; /* Black */
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 16px;
-  text-align: center;
+  max-width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(45deg, #25d366, #20b358);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(45deg, #20b358, #25d366);
 }
 
 .whatsapp-button img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
+  filter: brightness(1.1);
 }
 
 /* Responsive styles */
+@media (max-width: 1024px) {
+  .main-content {
+    gap: 24px;
+    padding: 30px 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
-    padding: 10px;
+    padding: 0;
   }
 
   .main-content {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 12px;
   }
 
   .radio-player,
   .news {
     width: 100%;
+    max-width: 100%;
   }
 
-  .footer {
-    padding: 10px;
+  .whatsapp-button {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-button img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px 8px;
+    gap: 16px;
   }
 
   .whatsapp-button {
@@ -153,28 +228,51 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #8b5cf6, #6366f1);
+}
+
+/* Mobile scrolling improvements */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+  
+  .app-background {
+    min-height: auto;
+  }
+  
+  .main-content {
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 20px;
+  }
+  
   .content {
-    padding: 5px;
+    min-height: auto;
   }
+}
 
-  .radio-player {
-    padding: 5px;
-  }
+/* Ensure proper scrolling on all devices */
+* {
+  -webkit-overflow-scrolling: touch;
+}
 
-  .footer {
-    padding: 5px;
-  }
-
-  .whatsapp-button {
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .whatsapp-button img {
-    width: 25px;
-    height: 25px;
-  }
+html {
+  scroll-behavior: smooth;
 }
