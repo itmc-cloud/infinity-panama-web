@@ -17,7 +17,7 @@ function App() {
         </div>
       </div>
       <Footer />
-      <a href="https://wa.me/50765432109" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/50763247541" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" />
       </a>
     </div>
