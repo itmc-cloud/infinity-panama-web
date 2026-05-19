@@ -39,7 +39,7 @@ const Footer = () => {
             <Box className="contact-info">
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
                 <Phone sx={{ marginRight: 1, color: '#8b5cf6' }} />
-                <Typography variant="body2">+507 6543-2109</Typography>
+                  <Typography variant="body2">+507 63247541</Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
                 <Email sx={{ marginRight: 1, color: '#8b5cf6' }} />
