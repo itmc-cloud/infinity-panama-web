@@ -1,13 +1,14 @@
 .news-container {
-  background: linear-gradient(145deg, #f8fafc, #f1f5f9) !important;
+  background: linear-gradient(160deg, #0c0e18 0%, #060810 50%, #040507 100%) !important;
   padding: 32px !important;
   border-radius: 20px !important;
   max-width: 500px;
   width: 100%;
   margin: 20px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 
-              0 0 20px rgba(99, 102, 241, 0.05) !important;
+  border: 1px solid rgba(200, 148, 26, 0.25);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(200, 148, 26, 0.05) !important;
 }
 
 .news-header {
@@ -16,8 +17,20 @@
   gap: 12px;
   margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+  border-bottom: 1px solid rgba(200, 148, 26, 0.2);
   position: relative;
+}
+
+/* Golden divider glow under header */
+.news-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8941a, #f0c040, #c8941a, transparent);
+  box-shadow: 0 0 8px rgba(200, 148, 26, 0.5);
 }
 
 .refresh-button {
@@ -32,7 +45,7 @@
 }
 
 .refresh-button:hover {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(200, 148, 26, 0.1);
 }
 
 .refresh-button:disabled {
@@ -41,7 +54,7 @@
 }
 
 .refresh-icon {
-  color: #6366f1 !important;
+  color: #c8941a !important;
   font-size: 24px !important;
   transition: transform 0.3s ease;
 }
@@ -64,20 +77,23 @@
 }
 
 .last-updated {
-  color: #999 !important;
+  color: rgba(200, 148, 26, 0.5) !important;
   font-size: 11px !important;
   margin-bottom: 8px !important;
 }
 
 .news-icon {
-  color: #6366f1 !important;
+  color: #c8941a !important;
   font-size: 32px !important;
+  filter: drop-shadow(0 0 6px rgba(200, 148, 26, 0.4));
 }
 
 .news-title {
-  color: #1e293b !important;
+  color: #e8c060 !important;
   font-weight: bold !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-shadow:
+    0 0 8px rgba(232, 192, 96, 0.8),
+    0 0 20px rgba(200, 148, 26, 0.4);
 }
 
 .news-list {
@@ -91,16 +107,16 @@
 .news-card {
   padding: 20px !important;
   border-radius: 16px !important;
-  background: linear-gradient(145deg, #ffffff, #f8fafc) !important;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  background: linear-gradient(145deg, #090c14, #060810) !important;
+  border: 1px solid rgba(200, 148, 26, 0.12);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .news-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15) !important;
-  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(200, 148, 26, 0.1) !important;
+  border-color: rgba(200, 148, 26, 0.3);
 }
 
 .news-card-header {
@@ -111,34 +127,35 @@
 }
 
 .category-chip {
-  color: white !important;
+  color: #0a0d1a !important;
   font-weight: bold !important;
   font-size: 12px !important;
   height: 24px !important;
   border-radius: 12px !important;
+  background: linear-gradient(135deg, #c8941a, #f0c040) !important;
 }
 
 .news-time {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #666;
+  color: rgba(200, 148, 26, 0.6);
 }
 
 .time-icon {
   font-size: 16px !important;
-  color: #999;
+  color: rgba(200, 148, 26, 0.5);
 }
 
 .news-item-title {
-  color: #1e293b !important;
+  color: #e0d5c0 !important;
   font-weight: 600 !important;
   margin-bottom: 8px !important;
   line-height: 1.3;
 }
 
 .news-summary {
-  color: #666 !important;
+  color: rgba(224, 213, 192, 0.6) !important;
   line-height: 1.4;
   margin-top: 8px !important;
 }
@@ -146,12 +163,12 @@
 .news-footer {
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 102, 0, 0.2);
+  border-top: 1px solid rgba(200, 148, 26, 0.15);
   text-align: center;
 }
 
 .more-news {
-  color: #ff6600 !important;
+  color: #c8941a !important;
   font-style: italic;
   font-weight: 500 !important;
 }
@@ -162,17 +179,17 @@
     margin: 10px;
     padding: 24px 20px !important;
   }
-  
+
   .news-card {
     padding: 16px !important;
   }
-  
+
   .news-card-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  
+
   .news-time {
     align-self: flex-end;
   }
@@ -183,13 +200,13 @@
     padding: 20px 16px !important;
     border-radius: 16px !important;
   }
-  
+
   .news-header {
     flex-direction: column;
     text-align: center;
     gap: 8px;
   }
-  
+
   .news-title {
     font-size: 1.5rem !important;
   }

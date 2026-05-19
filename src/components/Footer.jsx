@@ -4,9 +4,8 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <Box className="footer" sx={{ 
-      background: 'linear-gradient(145deg, #000000, #1a1a1a)',
-      color: 'white',
+    <Box className="footer" sx={{
+      color: '#e0d5c0',
       padding: '40px 0 20px 0',
       marginTop: 'auto'
     }}>
@@ -14,7 +13,7 @@ const Footer = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h5" className="footer-title" sx={{ 
-              color: '#6366f1', 
+              color: '#c8941a', 
               fontWeight: 'bold',
               marginBottom: 2
             }}>
@@ -23,14 +22,14 @@ const Footer = () => {
             <Typography variant="body2" sx={{ marginBottom: 2, lineHeight: 1.6 }}>
               Radio online desde Chitré con el programa &quot;Música de Ayer&quot;. Las mejores melodías de antaño, 24 horas al día.
             </Typography>
-            <Typography variant="h6" sx={{ color: '#8b5cf6', fontWeight: 'bold' }}>
+            <Typography variant="h6" sx={{ color: '#d4a830', fontWeight: 'bold' }}>
               Radio Online
             </Typography>
           </Grid>
           
           <Grid item xs={12} md={4}>
             <Typography variant="h6" className="footer-section-title" sx={{ 
-              color: '#6366f1',
+              color: '#c8941a',
               marginBottom: 2,
               fontWeight: 'bold'
             }}>
@@ -38,15 +37,15 @@ const Footer = () => {
             </Typography>
             <Box className="contact-info">
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-                <Phone sx={{ marginRight: 1, color: '#8b5cf6' }} />
+                <Phone sx={{ marginRight: 1, color: '#d4a830' }} />
                   <Typography variant="body2">+507 63247541</Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-                <Email sx={{ marginRight: 1, color: '#8b5cf6' }} />
+                <Email sx={{ marginRight: 1, color: '#d4a830' }} />
                 <Typography variant="body2">infinityradio@chitremusica.pa</Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <LocationOn sx={{ marginRight: 1, color: '#8b5cf6' }} />
+                <LocationOn sx={{ marginRight: 1, color: '#d4a830' }} />
                 <Typography variant="body2">Chitré, Herrera, Panamá</Typography>
               </Box>
             </Box>
@@ -54,7 +53,7 @@ const Footer = () => {
           
           <Grid item xs={12} md={4}>
             <Typography variant="h6" className="footer-section-title" sx={{ 
-              color: '#6366f1',
+              color: '#c8941a',
               marginBottom: 2,
               fontWeight: 'bold'
             }}>
@@ -81,7 +80,7 @@ const Footer = () => {
         </Grid>
         
         <Box sx={{ 
-          borderTop: '1px solid rgba(99, 102, 241, 0.3)',
+          borderTop: '1px solid rgba(200, 148, 26, 0.25)',
           marginTop: 4,
           paddingTop: 3,
           textAlign: 'center'

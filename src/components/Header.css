@@ -1,170 +1,72 @@
 .header-background {
-  background: 
-    radial-gradient(ellipse at center, rgba(139, 69, 19, 0.15) 0%, transparent 70%),
-    linear-gradient(135deg, #1a0f0a 0%, #2d1810 35%, #3d2317 65%, #4a2c1a 100%);
+  background: linear-gradient(180deg, #040507 0%, #050709 100%);
   position: relative;
-  padding: 60px 0;
+  padding: 48px 0 36px;
   text-align: center;
-  color: white;
   overflow: hidden;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  border-bottom: 3px solid #8b4513;
-  box-shadow: 
-    inset 0 0 50px rgba(139, 69, 19, 0.2),
-    0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.header-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    /* Vintage radio grill pattern */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(139, 69, 19, 0.1) 4px,
-      rgba(139, 69, 19, 0.1) 5px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 8px,
-      rgba(101, 67, 33, 0.08) 9px,
-      rgba(101, 67, 33, 0.08) 10px
-    ),
-    /* Wood grain simulation */
-    linear-gradient(45deg, 
-      rgba(222, 184, 135, 0.03) 25%, 
-      transparent 25%, 
-      transparent 75%, 
-      rgba(222, 184, 135, 0.03) 75%);
-  background-size: 100% 100%, 100% 100%, 20px 20px;
-  pointer-events: none;
-}
-
+/* Bottom gold glow divider */
 .header-background::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #8b4513, #cd853f, #daa520, #8b4513);
-  box-shadow: 0 1px 3px rgba(139, 69, 19, 0.5);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #b8820f 15%, #e8b820 40%, #ffd700 50%, #e8b820 60%, #b8820f 85%, transparent 100%);
+  box-shadow:
+    0 0 6px rgba(255, 215, 0, 0.9),
+    0 0 18px rgba(232, 184, 32, 0.5),
+    0 0 35px rgba(200, 148, 26, 0.25);
 }
 
 .header-title {
-  position: relative;
-  z-index: 2;
-  font-family: 'Times New Roman', serif;
-  font-weight: 800;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #daa520, #cd853f, #f4e4bc);
+  font-family: 'Times New Roman', Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  background: linear-gradient(160deg, #f5e090 0%, #d4a020 35%, #f0c840 55%, #c8841a 75%, #f0d060 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: titleGlow 3s ease-in-out infinite alternate;
-  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.5);
-  filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
+  filter: drop-shadow(0 0 14px rgba(232, 184, 32, 0.65));
+  margin-bottom: 20px !important;
 }
 
-.header-subtitle {
-  position: relative;
-  z-index: 2;
-  font-family: 'Times New Roman', serif;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-style: italic;
-  margin-top: 12px;
-  color: #f4e4bc;
-  text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.7);
-  animation: fadeInUp 1.2s ease-out;
-}
-
-.frequency-display {
-  position: relative;
-  z-index: 2;
-  background: 
-    linear-gradient(145deg, rgba(139, 69, 19, 0.3), rgba(101, 67, 33, 0.2)),
-    linear-gradient(45deg, rgba(218, 165, 32, 0.1), rgba(205, 133, 63, 0.1));
-  backdrop-filter: blur(20px);
-  border: 2px solid #8b4513;
-  border-radius: 15px;
-  padding: 12px 24px;
-  margin-top: 24px;
+/* "Radio en línea" badge — dark box with gold border */
+.header-badge {
   display: inline-block;
-  box-shadow: 
-    0 8px 32px rgba(139, 69, 19, 0.3),
-    inset 0 1px 0 rgba(244, 228, 188, 0.2),
-    inset 0 -1px 0 rgba(139, 69, 19, 0.2);
-  animation: floatAnimation 4s ease-in-out infinite;
+  border: 2px solid rgba(200, 148, 26, 0.7);
+  border-radius: 10px;
+  padding: 10px 40px;
+  background: rgba(4, 5, 7, 0.6);
+  box-shadow:
+    0 0 12px rgba(200, 148, 26, 0.15),
+    inset 0 1px 0 rgba(255, 215, 0, 0.08);
+}
+
+.header-badge-text {
+  color: #e8c060 !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 8px rgba(232, 192, 96, 0.7),
+    0 0 18px rgba(200, 148, 26, 0.35);
 }
 
 @keyframes titleGlow {
-  0% {
-    filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
-  }
-  100% {
-    filter: drop-shadow(0 0 20px rgba(205, 133, 63, 0.5));
-  }
+  0%   { filter: drop-shadow(0 0 10px rgba(232, 184, 32, 0.55)); }
+  100% { filter: drop-shadow(0 0 26px rgba(255, 215, 0, 0.85)); }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatAnimation {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .header-background {
-    padding: 32px 0;
-    min-height: 250px;
-  }
-  
-  .header-title {
-    font-size: 2rem !important;
-    letter-spacing: 1px;
-  }
-  
-  .header-subtitle {
-    font-size: 1.2rem !important;
-  }
+  .header-background { padding: 32px 0 28px; }
+  .header-title { font-size: 2.2rem !important; }
 }
 
 @media (max-width: 480px) {
-  .header-background {
-    padding: 24px 0;
-    min-height: 200px;
-  }
-  
-  .header-title {
-    font-size: 1.5rem !important;
-  }
-  
-  .header-subtitle {
-    font-size: 1rem !important;
-  }
+  .header-background { padding: 24px 0 20px; }
+  .header-title { font-size: 1.8rem !important; }
+  .header-badge { padding: 8px 24px; }
 }
