@@ -18,19 +18,19 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" className={styles.appBar} style={{ 
-      backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    <AppBar position="static" className={styles.appBar} style={{
+      backgroundColor: 'rgba(4, 5, 7, 0.97)',
       backdropFilter: 'blur(10px)',
-      borderBottom: '2px solid #ff6600'
+      borderBottom: '1px solid rgba(200, 148, 26, 0.3)'
     }}>
       <Toolbar sx={{ padding: '0 16px', minHeight: '80px !important' }}>
         <div className={styles.logoContainer}>
           <img src={logo} alt="Infinity Radio Panamá" className={styles.logo} />
-          <RadioIcon sx={{ color: '#ff6600', marginLeft: 1, fontSize: 32 }} />
+          <RadioIcon sx={{ color: '#c8941a', marginLeft: 1, fontSize: 32 }} />
         </div>
         <Typography variant="h5" component="div" className={styles.title} sx={{
           fontWeight: 'bold',
-          background: 'linear-gradient(45deg, #ff6600, #ffcc00)',
+          background: 'linear-gradient(45deg, #c8941a, #f0c040)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>

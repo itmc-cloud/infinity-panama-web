@@ -1,11 +1,12 @@
 /* src/components/Navbar/Navbar.module.css */
 .appBar {
-  background: linear-gradient(90deg, rgba(15, 15, 35, 0.95), rgba(26, 26, 46, 0.95)) !important;
+  background: linear-gradient(90deg, rgba(4, 5, 7, 0.98), rgba(6, 8, 10, 0.98)) !important;
   position: relative;
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-  min-height: 80px !important; /* Increased from default 64px */
-  z-index: 1000 !important; /* Ensure navbar is above everything */
+  border-bottom: 1px solid rgba(200, 148, 26, 0.3);
+  min-height: 80px !important;
+  z-index: 1000 !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(200, 148, 26, 0.15) !important;
 }
 
 .logoContainer {
@@ -15,7 +16,7 @@
 }
 
 .logo {
-  height: 70px; /* Increased from 64px */
+  height: 70px;
   width: auto;
   margin-right: 8px;
   transition: transform 0.3s ease;
@@ -37,7 +38,7 @@
 }
 
 .menuItem {
-  color: white !important;
+  color: #e0d5c0 !important;
   text-transform: none;
   font-weight: 500 !important;
   padding: 8px 16px !important;
@@ -46,14 +47,15 @@
 }
 
 .menuItem:hover {
-  background: linear-gradient(45deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)) !important;
+  background: rgba(200, 148, 26, 0.12) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
-  color: #e0e7ff !important;
+  box-shadow: 0 6px 15px rgba(200, 148, 26, 0.2);
+  color: #f0c040 !important;
 }
 
 .menuButton {
   display: none;
+  color: #c8941a !important;
 }
 
 @media (max-width: 768px) {
@@ -63,12 +65,13 @@
     position: absolute;
     top: 80px;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(8, 11, 24, 0.97);
     backdrop-filter: blur(10px);
     width: 100%;
     text-align: right;
     padding: 20px;
-    border-top: 2px solid #ff6600;
+    border-top: 1px solid rgba(200, 148, 26, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   }
 
   .menuOpen {
